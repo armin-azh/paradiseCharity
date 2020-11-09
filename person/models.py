@@ -130,6 +130,7 @@ class NeedyDetail(models.Model):
     """
         this class implement the Needy table on database
     """
+    needy = models.ForeignKey(Needy, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False)  # detail name
     intro = models.CharField(max_length=100, null=True)
     image = models.ForeignKey('wagtailimages.Image',
@@ -138,6 +139,7 @@ class NeedyDetail(models.Model):
                               related_name='+')  # image field
 
     panels = [
+        FieldPanel('needy'),
         FieldPanel('name'),
         FieldPanel('intro'),
         ImageChooserPanel('image')
