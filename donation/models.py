@@ -35,7 +35,7 @@ class Donation(models.Model):
     objects = DonationManager()
 
     class Meta:
-        db_table = "donation"
+        db_table = "donation"   # table name on database
 
     def __str__(self):
         """

@@ -33,7 +33,7 @@ class Payment(models.Model):
     objects = PaymentManager()
 
     class Meta:
-        db_table = 'payments'
+        db_table = 'payment'    # table name on database
 
     def __str__(self):
         """

@@ -47,7 +47,7 @@ class UserPerson(models.Model):
     ]
 
     class Meta:
-        db_table = 'user'  # table name on database
+        db_table = 'userperson'  # table name on database
 
     def __str__(self):
         """
@@ -148,7 +148,7 @@ class NeedyDetail(models.Model):
     objects = NeedyDetailManager()
 
     class Meta:
-        db_table = 'needydetail'
+        db_table = 'needydetail'    # table name on database
         unique_together = (('id', 'name'),)
 
     def __str__(self):

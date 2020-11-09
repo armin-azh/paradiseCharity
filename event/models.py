@@ -27,7 +27,7 @@ class Category(models.Model):
     objects = CategoryManager()
 
     class Meta:
-        db_table = "category"
+        db_table = "category"  # table name on database
 
     def __str__(self):
         """
@@ -60,6 +60,9 @@ class Event(models.Model):
     ]
 
     objects = EventManager()
+
+    class Meta:
+        db_table = 'event'  # table name on database
 
     def __str__(self):
         """
@@ -96,7 +99,7 @@ class EventDetail(models.Model):
     objects = EventDetailManager()
 
     class Meta:
-        db_table = 'eventdetail'
+        db_table = 'eventdetail'  # table name on database
 
     def __str__(self):
         """
@@ -126,6 +129,9 @@ class EventNeedy(models.Model):
     ]
 
     objects = EventNeedyManager()
+
+    class Meta:
+        db_table = 'eventneedy'  # table name on database
 
     def __str__(self):
         """

@@ -41,7 +41,7 @@ class Order(models.Model):
     objects = OrderManager()
 
     class Meta:
-        db_table = 'order'
+        db_table = 'order'  # table name on database
 
     def __str__(self):
         """
