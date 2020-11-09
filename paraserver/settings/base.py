@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'order.apps.OrderConfig',
     'donation.apps.DonationConfig',
     'payment.apps.PaymentConfig',
+    'event.apps.EventConfig'
 ]
 
 MIDDLEWARE = [
