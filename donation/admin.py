@@ -10,7 +10,7 @@ class DonationModelAdmin(ModelAdmin):
         this class is for import Donation class and provide an access from CRM
     """
     model = Donation
-    menu_label = "Donation List"
+    menu_label = "Donation"
     menu_icon = 'radio-empty'
     add_to_settings_menu = False
     exclude_from_explorer = False
