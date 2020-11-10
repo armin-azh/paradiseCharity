@@ -27,6 +27,13 @@ INSTALLED_APPS = [
     'home',
     'search',
 
+    # apps
+    'person.apps.PersonConfig',
+    'order.apps.OrderConfig',
+    'donation.apps.DonationConfig',
+    'payment.apps.PaymentConfig',
+    'event.apps.EventConfig',
+
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -38,6 +45,7 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
+    'wagtail.contrib.modeladmin',
 
     'modelcluster',
     'taggit',
@@ -49,12 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # apps
-    'person.apps.PersonConfig',
-    'order.apps.OrderConfig',
-    'donation.apps.DonationConfig',
-    'payment.apps.PaymentConfig',
-    'event.apps.EventConfig'
+
 ]
 
 MIDDLEWARE = [
