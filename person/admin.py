@@ -14,7 +14,7 @@ class UserPersonModelAdmin(ModelAdmin):
     """
     model = UserPerson
     menu_label = 'User'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('id',
@@ -30,7 +30,7 @@ class NeedyModelAdmin(ModelAdmin):
     """
     model = Needy
     menu_label = 'Needy'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('id',
@@ -46,7 +46,7 @@ class NeedyDetailModelAdmin(ModelAdmin):
     """
     model = NeedyDetail
     menu_label = 'Needy Detail'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('needy',
@@ -59,7 +59,7 @@ class PersonModelAdminGroup(ModelAdminGroup):
         this class is for put together all relative person model in one class
     """
     menu_label = 'Person'
-    menu_icon = 'group'
+    menu_icon = 'user'
     items = (
         UserPersonModelAdmin,
         NeedyModelAdmin,

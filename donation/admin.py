@@ -11,7 +11,7 @@ class DonationModelAdmin(ModelAdmin):
     """
     model = Donation
     menu_label = "Donation"
-    menu_icon = 'radio-empty'
+    menu_icon = 'form'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = (

@@ -20,8 +20,8 @@ class Category(models.Model):
     cat_description = models.CharField(max_length=100, null=True)
 
     panels = [
-        FieldPanel('cat_name'),
-        FieldPanel('cat_description')
+        FieldPanel('cat_name', heading='Category Name'),
+        FieldPanel('cat_description', heading='Category Description')
     ]
 
     objects = CategoryManager()
@@ -92,8 +92,8 @@ class EventDetail(models.Model):
 
     panels = [
         FieldPanel('name'),
-        FieldPanel('intro'),
-        ImageChooserPanel('image')
+        FieldPanel('intro', heading='Description', help_text='require'),
+        ImageChooserPanel('image', help_text='Not require')
     ]
 
     objects = EventDetailManager()

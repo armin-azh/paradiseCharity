@@ -15,7 +15,7 @@ class CategoryModelAdmin(ModelAdmin):
     """
     model = Category
     menu_label = 'Category'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('cat_name', 'cat_description')
@@ -27,7 +27,7 @@ class EventModelAdmin(ModelAdmin):
     """
     model = Event
     menu_label = 'Event'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('event_name',
@@ -42,7 +42,7 @@ class EventDetailModelAdmin(ModelAdmin):
     """
     model = EventDetail
     menu_label = 'Event Detail'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('event',
@@ -55,7 +55,7 @@ class EventNeedyModelAdmin(ModelAdmin):
     """
     model = EventNeedy
     menu_label = 'Event Needy'
-    menu_icon = 'radio-empty'
+    menu_icon = 'arrow-right'
     add_to_settings_menu = False
     exclude_from_explorer = False
     list_display = ('event',
@@ -69,6 +69,7 @@ class EventModelAdminGroup(ModelAdminGroup):
     menu_label = 'Event'
     menu_icon = 'group'
     items = (
+        CategoryModelAdmin,
         EventModelAdmin,
         EventDetailModelAdmin,
         EventNeedyModelAdmin
