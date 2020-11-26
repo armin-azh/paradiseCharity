@@ -91,6 +91,7 @@ class EventDetail(models.Model):
                               related_name='+')  # image field
 
     panels = [
+        FieldPanel('event'),
         FieldPanel('name'),
         FieldPanel('intro', heading='Description', help_text='require'),
         ImageChooserPanel('image', help_text='Not require')

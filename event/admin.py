@@ -32,8 +32,7 @@ class EventModelAdmin(ModelAdmin):
     exclude_from_explorer = False
     list_display = ('event_name',
                     'category',
-                    'created',
-                    'update')
+                    'created',)
 
 
 class EventDetailModelAdmin(ModelAdmin):
