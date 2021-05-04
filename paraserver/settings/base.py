@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'paradise',
         'USER': 'armin_npm',
-        'PASSWORD': '12345678',
+        'PASSWORD': '123456789',
         'HOST': 'localhost',
         'PORT': 5432
     }
