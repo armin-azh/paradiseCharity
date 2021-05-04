@@ -3,6 +3,6 @@ wagtail>=2.10,<2.11
 whitenoise
 gunicorn
 dj-database-url
-psycopg2
+psycopg2-binary
 dropbox
 django-storages
