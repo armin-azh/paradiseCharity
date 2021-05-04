@@ -161,8 +161,8 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/3.1/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'QhZ5S1823kAAAAAAAAAAIPOGQMbllDQ5EOcTGLyQQU1pf9BJcMU3_uSUQUGFJsOB'
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+# DROPBOX_OAUTH2_TOKEN = 'QhZ5S1823kAAAAAAAAAAIPOGQMbllDQ5EOcTGLyQQU1pf9BJcMU3_uSUQUGFJsOB'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
