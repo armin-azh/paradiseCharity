@@ -1,0 +1,17 @@
+CREATE OR REPLACE FUNCTION check_max_register_user()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+	AS
+$$
+DECLARE
+	num_users INT;
+BEGIN
+	SELECT COUNT(*) INTO num_users FROM auth_user;
+	IF num_users>5 THEN
+		RAISE 'YOU REACH THE MAXIMUM USERS: %',num_users;
+		RETURN NULL;
+	ELSE
+		RETURN NEW;
+	END IF;
+END;
+$$
