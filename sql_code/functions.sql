@@ -64,6 +64,21 @@ BEGIN
 		RAISE 'YOU WANT TO CREATE A PAYMENT WITHOUT ANY ORDER SUBMITION';
 	END IF;
 END;
-$$
+$$;
 
+-- User Person
+
+CREATE OR REPLACE FUNCTION update_user_person()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+    AS
+
+$$
+    BEGIN
+        IF OLD.id = NEW.id THEN
+            CALL update_email_user_person(NEW.id,NEW.email);
+            RETURN NEW;
+        END IF;
+    END;
+$$;
 

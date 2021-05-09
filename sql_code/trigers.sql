@@ -2,6 +2,8 @@ DROP TRIGGER IF EXISTS max_user_policy ON auth_user;
 DROP TRIGGER IF EXISTS update_users_login ON auth_user;
 DROP TRIGGER IF EXISTS insert_payment_with_order_submission ON payment;
 DROP TRIGGER IF EXISTS max_user_group_policy ON auth_user_groups;
+DROP TRIGGER IF EXISTS update_user_person_entity ON userperson;
+
 
 CREATE TRIGGER max_user_policy
 	BEFORE INSERT
@@ -24,4 +26,10 @@ CREATE TRIGGER max_user_group_policy
     BEFORE INSERT
     ON auth_user_groups
     EXECUTE PROCEDURE check_max_user_in_group();
-	
+
+
+-- User Person
+CREATE TRIGGER update_user_person_entity
+    BEFORE UPDATE
+    ON userperson
+    EXECUTE PROCEDURE update_user_person();
