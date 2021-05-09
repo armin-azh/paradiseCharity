@@ -30,6 +30,23 @@ BEGIN
 END;
 $$;
 
+-- Auth_User_Group
+CREATE OR REPLACE FUNCTION check_max_user_in_group()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+    AS
+$$
+    DECLARE
+        ng_user INT;
+    BEGIN
+        SELECT COUNT(*) INTO ng_user FROM auth_user_groups WHERE user_id = NEW.user_id;
+        IF ng_user > 4 THEN
+            RAISE 'THIS USER REACHED HIS MAXIMUM GROUP';
+        END IF ;
+
+    END;
+$$;
+
 
 -- Payment
 CREATE OR REPLACE FUNCTION insert_new_payment()
@@ -41,10 +58,12 @@ DECLARE
 	order_id INT;
 BEGIN
 	SELECT id INTO order_id FROM "order" WHERE donation_id =NEW.donation_id;
-	IF NOT order_id THEN
+	IF order_id<>NULL THEN
 		RETURN NEW;
 	ELSE
 		RAISE 'YOU WANT TO CREATE A PAYMENT WITHOUT ANY ORDER SUBMITION';
 	END IF;
 END;
-$$;
+$$
+
+
